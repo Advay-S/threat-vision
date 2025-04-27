@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "enricher"
+]
+resolver = "1"
+
+[profile.release-lto]
+inherits = "release"
+lto = true
+strip = "symbols"

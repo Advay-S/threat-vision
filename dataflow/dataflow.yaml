@@ -1,0 +1,35 @@
+apiVersion: 0.5.0
+
+meta:
+  name: threat-vision-dataflow
+  version: 0.1.0
+  namespace: threat-vision
+
+config:
+  converter: json
+
+imports:
+  - pkg: threat-vision/enricher@0.1.0
+    functions:
+      - name: enrich
+
+topics:
+  otx-blue:
+    schema:
+      value:
+        type: json
+  enriched-records:
+    schema:
+      value:
+        type: json
+
+services:
+  enrich-service:
+    sources:
+      - type: topic
+        id: otx-blue
+    operators:
+      - uses: enrich
+    sinks:
+      - type: topic
+        id: enriched-records

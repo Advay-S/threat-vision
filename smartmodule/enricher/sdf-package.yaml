@@ -1,0 +1,10 @@
+apiVersion: 0.5.0
+
+meta:
+  name: enricher
+  version: 0.1.0
+  namespace: threat-vision
+
+config:
+  language: rust
+  entry: src/lib.rs

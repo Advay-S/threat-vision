@@ -1,0 +1,18 @@
+
+# SmartModules
+target/
+*.wasm
+/target
+/.hub
+
+# VSCode
+.vscode/
+
+# Docker
+*.log
+
+# Mac
+.DS_Store
+
+# Env
+.env
