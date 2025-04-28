@@ -28,7 +28,7 @@ class API_Fetcher:
 class FluvioProducer:
     def __init__(self):
         try:
-            self.fluvio = Fluvio.connect("local")  # Replace with your actual Fluvio profile name
+          self.fluvio = Fluvio.connect() 
             print("Successfully connected to Fluvio.")
         except Exception as e:
             print(f"Fluvio connection failed: {str(e)}")
